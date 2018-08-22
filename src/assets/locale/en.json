@@ -1,8 +1,10 @@
 {
-  "login.logo.span":"To ensure your account is safe and normal, please bind it as soon as possible if you are not bound. Thank you for your understanding and support.",
-  "login.content.commonlogin":"Common login",
-  "login.content.mobilelogin":"Mobile login",
-  "login.username.placeholder":"Username / mailbox / cell phone number",
-  "login.password.placeholder":"password",
-  "login":"login"
+  "header.component.home.page": "Zhi Zhi Tea City home",
+  "header.component.mobile.version": "Zhi Zhi Tea City mobile ver",
+  "header.component.login": "Login",
+  "header.component.register": "Register",
+  "header.component.order": "Order",
+  "header.component.help": "Help",
+  "header.component.about": "About Zhi",
+  "header.component.cart": "Shopping Cart"
 }

@@ -1,8 +1,10 @@
 {
-  "login.logo.span":"依《网络安全法》相关要求，即日起蘑菇街会员登陆需绑定手机。为保障您的账户安全及正常使用，如您尚未绑定，请尽快完成绑定，感谢您的理解和支持!",
-  "login.content.commonlogin":"普通登录",
-  "login.content.mobilelogin":"手机无密码登录",
-  "login.username.placeholder":"用户名/邮箱/手机号",
-  "login.password.placeholder":"密码",
-  "login":"登录"
+  "header.component.home.page": "枝枝茶城首页",
+  "header.component.mobile.version": "枝枝茶城手机端",
+  "header.component.login": "登录",
+  "header.component.register": "注册",
+  "header.component.order": "我的订单",
+  "header.component.help": "帮助中心",
+  "header.component.about": "关于枝枝",
+  "header.component.cart": "购物车"
 }

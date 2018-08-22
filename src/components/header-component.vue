@@ -1,11 +1,11 @@
 <style>
   header{background-color: #333}
-  header>.margin{display: flex;line-height: 40px}
-  header>.margin>.l>ul{height: 40px;display: flex;margin-right: 200px}
+  header>.margin{display: flex;line-height: 40px;justify-content:space-between}
+  header>.margin>.l>ul{height: 40px;display: flex;}
   header>.margin>.l>ul>li{margin-right: 32px}
   header>.margin>.r>ul{height: 40px;display: flex}
   header>.margin>.r>ul>li{margin-right: 32px}
-  header>.margin>.cart-btn{height: 40px;width: 120px;display: block;display: flex;background-color: #ff3600;overflow: hidden}
+  header>.margin>.cart-btn{height: 40px;padding-right: 24px; display: block;display: flex;background-color: #ff3600;overflow: hidden}
   header>.margin>.cart-btn>.img-wrap{transform: translateY(0);transition: .2s}
   header>.margin>.cart-btn:hover>.img-wrap{transform: translateY(-30px)}
   header>.margin>.cart-btn:hover{background-color:#ccc}
@@ -19,17 +19,18 @@
     <div class="margin">
       <div class="l">
         <ul class="ul-li_a">
-          <li>枝枝茶城首页</li>
-          <li>枝枝茶城手机版</li>
+          <li>{{$t("header.component.home.page")}}</li>
+          <li>{{$t("header.component.home.page")}}</li>
+          <li class="iconfont icon-zh" style="font-size:25px"></li>
         </ul>
       </div>
       <div class="r">
         <ul  class="ul-li_a">
-          <li>登录</li>
-          <li>注册</li>
-          <li>我的订单</li>
-          <li>帮助中心</li>
-          <li>关于枝枝</li>
+          <li>{{$t("header.component.login")}}</li>
+          <li>{{$t("header.component.register")}}</li>
+          <li>{{$t("header.component.order")}}</li>
+          <li>{{$t("header.component.help")}}</li>
+          <li>{{$t("header.component.about")}}</li>
           <li>4000-000-000</li>
         </ul>
       </div>
@@ -38,7 +39,7 @@
           <img src="./../assets/images/cart2.png" alt="">
           <img src="./../assets/images/cart1.png" alt="">
         </div>
-        <input type="button" value="购物车">
+        <input type="button" :value="$t('header.component.cart')">
       </div>
     </div>
   </header>

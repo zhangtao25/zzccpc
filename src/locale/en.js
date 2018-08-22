@@ -1,2 +1,3 @@
 import en from './../assets/locale/en'
-export default en
+import teaNameEn from './../assets/locale/tea-name-en'
+export default {...en,...teaNameEn}

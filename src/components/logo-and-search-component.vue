@@ -1,5 +1,8 @@
 <style>
-  .logo-and-search-component{display: flex}
+  /* .logo-and-search-component{display: flex} */
+  .logo-and-search-component>.margin{display: flex;padding-top: 25px}
+  .logo-and-search-component>.margin>.logo{cursor: pointer;}
+  .logo-and-search-component>.margin>.search{margin-left: 40px}
   .logo-and-search-component>.margin>.search>form{display: flex}
   .logo-and-search-component>.margin>.search>form>input:nth-child(1){
     width: 488px;height: 36px;
@@ -15,20 +18,31 @@
     border-left: none;
     background-color: #fff
   }
-  .logo-and-search-component>.margin>.search>form>input:nth-child(1).focus{border: 1px solid #ff3600;}
+  .logo-and-search-component>.margin>.search>.ul-li_a{display: flex;font-size: 12px;margin-top: 10px;color: #999}
+  .logo-and-search-component>.margin>.search>.ul-li_a:hover{color: #ff3600}
+  .logo-and-search-component>.margin>.search>.ul-li_a>li{margin-right: 20px}
+  .logo-and-search-component>.margin>.search>.ul-li_a>li:nth-child(1){color: #ff3600}
+  /* .logo-and-search-component>.margin>.search>form>input:nth-child(1).focus{border: 1px solid #ff3600;}
   .logo-and-search-component>.margin>.search>form>input:nth-child(2).focus1{border: 1px solid #ff3600;border-left: none}
-  .logo-and-search-component>.margin>.search>form>input:nth-child(2).focus-btn{background-color: #ff3600;background-image: url("./../assets/images/icon-search-s.png");}
+  .logo-and-search-component>.margin>.search>form>input:nth-child(2).focus-btn{background-color: #ff3600;background-image: url("./../assets/images/icon-search-s.png");} */
 
 </style>
 <template>
   <div class="logo-and-search-component">
     <div class="margin">
-      <img src="./../assets/images/logo.gif" alt="" class="logo">
+      <img src="./../assets/images/logo.gif" alt="" class="logo" @click="goHome">
       <div class="search">
         <form action="">
-          <input type="text" @blur="txtBlur()" @focus="txtFocus()" :class="classObject">
-          <input type="button"  @mouseover="btnMouseover()" @mouseleave="btnMouseleave()" :class="classObject1">
+          <input type="text" ref="searchTxt" class="searchTxt" @blur="txtBlur()" @focus="txtFocus()">
+          <input type="button" ref="searchBtn" class="searchBtn" @mouseover="btnMouseover()" @mouseleave="btnMouseleave()">
         </form>
+        <ul class="ul-li_a">
+          <li>{{$t("white.tea")}}</li>
+          <li>{{$t("Guangdong.single.fir")}}</li>
+          <li>{{$t("Longjing")}}</li>
+          <li>{{$t("Jin.Jun.Mei")}}</li>
+          <li>{{$t("puer.tea")}}</li>
+        </ul>
       </div>
       <div></div>
     </div>
@@ -39,27 +53,39 @@
   export default {
     data(){
       return{
-        classObject: {
-          'focus': true,
-        },
-        classObject1: {
-          'focus1': true,
-          'focus-btn': true
-        }
       }
     },
     methods:{
       txtBlur(){
-        this.classObject.focus=false;
+        this.$refs.searchTxt.style.border = "1px solid #e0e0e0";
+        this.$refs.searchBtn.style.border="1px solid #e0e0e0";
+        this.$refs.searchBtn.style.backgroundColor = "#ffffff"
+        this.$refs.searchBtn.style.borderLeft = "none"
       },
       txtFocus(){
-        this.classObject.focus=true;
+        this.$refs.searchTxt.style.border = "1px solid #ff3600";
+        this.$refs.searchBtn.style.border="1px solid #ff3600";
+        this.$refs.searchBtn.style.borderLeft = "none"
       },
       btnMouseleave(){
-        this.classObject1.focus1=false;
+        if(document.activeElement.className != 'searchTxt'){
+          this.$refs.searchTxt.style.border = "1px solid #e0e0e0";
+          this.$refs.searchBtn.style.border="1px solid #e0e0e0";
+        }
+        this.$refs.searchBtn.style.backgroundColor = "#ffffff"
+        this.$refs.searchBtn.style.backgroundImage = "url('/static/special-pictures/icon-search.png')"
+        this.$refs.searchBtn.style.borderLeft = "none"
       },
       btnMouseover(){
-        this.classObject1.focus1=true;
+        this.$refs.searchTxt.style.border = "1px solid #ff3600";
+        this.$refs.searchBtn.style.border="1px solid #ff3600";
+        this.$refs.searchBtn.style.backgroundColor = "#ff3600"
+        this.$refs.searchBtn.style.border="1px solid #ff3600";
+        this.$refs.searchBtn.style.backgroundImage = "url('/static/special-pictures/icon-search-s.png')"
+        this.$refs.searchBtn.style.borderLeft = "none"
+      },
+      goHome(){
+        this.$router.push({path:"/"})
       }
     }
   }
