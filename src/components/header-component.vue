@@ -21,7 +21,7 @@
         <ul class="ul-li_a">
           <li>{{$t("header.component.home.page")}}</li>
           <li>{{$t("header.component.home.page")}}</li>
-          <li class="iconfont icon-zh" style="font-size:25px"></li>
+          <li :class="['iconfont',langCodeHandle]" style="font-size:25px" @click="onChangeLang"></li>
         </ul>
       </div>
       <div class="r">
@@ -44,3 +44,37 @@
     </div>
   </header>
 </template>
+
+<script>
+  import {mapActions,mapGetters} from 'vuex'
+  export default {
+    data(){
+      return{
+      }
+    },
+    methods:{
+      onChangeLang(){
+        this.changeLang(this.changeToTheContrary(this.langCode))
+        window.location.reload()
+      },
+      changeToTheContrary(langCode){
+        if (langCode == "zh"){
+          return "en"
+        } else {
+          return "zh"
+        }
+      },
+      ...mapActions(["changeLang"])
+    },
+    computed:{
+      langCodeHandle:function(){
+        if (this.langCode=="en"){
+          return "icon-zh"
+        } else {
+          return "icon-en"
+        }
+      },
+      ...mapGetters(["langCode"])
+    }
+  }
+</script>

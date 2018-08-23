@@ -23,7 +23,7 @@
   .icon-en:before{ content: "\e712" }
   .icon-zh:before{ content: "\e713" }
 
-  .margin{margin: 0 auto;width: 1190px}
+  .margin{margin: 0 auto;width: 1226px}
   .ul-li_a>li{color: #b0b0b0}
   .ul-li_a>li:hover{cursor: pointer;color: #e64318}
   input{display: block;border: none}

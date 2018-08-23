@@ -1,0 +1,71 @@
+<style>
+  .category-list>.category-list-title{width: 234px;height: 60px;font-size:16px;line-height:60px;background-color: blueviolet;display: block}
+</style>
+<template>
+  <div class="category-list margin">
+    <span class="category-list-title">全部商品分类</span>
+    <div>
+      <ul>
+        <li>commodity0</li>
+        <li>commodity1</li>
+        <li>commodity2</li>
+        <li>commodity3</li>
+        <li>commodity4</li>
+        <li>commodity5</li>
+        <li>commodity6</li>
+        <li>commodity7</li>
+        <li>commodity8</li>
+        <li>commodity9</li>
+      </ul>
+      <div>
+        <ul>
+          <li>commodity0-0</li>
+          <li>commodity0-1</li>
+          <li>commodity0-2</li>
+          <li>commodity0-3</li>
+          <li>commodity0-4</li>
+          <li>commodity0-5</li>
+          <li>commodity0-6</li>
+          <li>commodity0-7</li>
+          <li>commodity0-8</li>
+          <li>commodity0-9</li>
+        </ul>
+        <ul>
+          <li>红茶</li>
+          <li>绿茶</li>
+          <li>黑茶</li>
+          <li>白茶</li>
+          <li>乌龙茶</li>
+        </ul>
+        <ul>
+          <li>红茶</li>
+          <li>绿茶</li>
+          <li>黑茶</li>
+          <li>白茶</li>
+          <li>乌龙茶</li>
+        </ul>
+        <ul>
+          <li>红茶</li>
+          <li>绿茶</li>
+          <li>黑茶</li>
+          <li>白茶</li>
+          <li>乌龙茶</li>
+        </ul>
+        <ul>
+          <li>红茶</li>
+          <li>绿茶</li>
+          <li>黑茶</li>
+          <li>白茶</li>
+          <li>乌龙茶</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+  export default {
+    data(){
+      virtualData:[{"name":"tea0","pro":["tea0-0"]}]
+    }
+  }
+</script>

@@ -5,6 +5,7 @@ import App from './App'
 
 // Import Vue.js core libraries
 import router from './router'
+import store from './store'
 
 // Import element-ui library
 import ElementUI from 'element-ui';
@@ -27,9 +28,19 @@ const messages = {
     ...zhLocale
   }
 }
+
+// Set up webpage language
+let langCode = ""
+if (localStorage.langCode) {
+  langCode = localStorage.langCode
+} else {
+  langCode = navigator.language||navigator.userLanguage;//常规浏览器语言和IE浏览器
+  langCode = langCode.substr(0, 2);
+  localStorage.langCode = langCode
+}
 // Create VueI18n instance with options
 const i18n = new VueI18n({
-  locale: 'zh', // set locale
+  locale: localStorage.langCode, // set locale
   messages, // set locale messages
 })
 
@@ -43,6 +54,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   i18n,
   components: { App },
   template: '<App/>'

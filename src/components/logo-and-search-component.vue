@@ -11,7 +11,7 @@
   }
   .logo-and-search-component>.margin>.search>form>input:nth-child(2){
     background-image: url("./../assets/images/icon-search.png");
-    width: 56px;height: 38px;
+    width: 56px;height: 37.6px;
     background-repeat: no-repeat;
     background-position: center;
     border: 1px solid #e0e0e0;
@@ -22,9 +22,6 @@
   .logo-and-search-component>.margin>.search>.ul-li_a:hover{color: #ff3600}
   .logo-and-search-component>.margin>.search>.ul-li_a>li{margin-right: 20px}
   .logo-and-search-component>.margin>.search>.ul-li_a>li:nth-child(1){color: #ff3600}
-  /* .logo-and-search-component>.margin>.search>form>input:nth-child(1).focus{border: 1px solid #ff3600;}
-  .logo-and-search-component>.margin>.search>form>input:nth-child(2).focus1{border: 1px solid #ff3600;border-left: none}
-  .logo-and-search-component>.margin>.search>form>input:nth-child(2).focus-btn{background-color: #ff3600;background-image: url("./../assets/images/icon-search-s.png");} */
 
 </style>
 <template>
