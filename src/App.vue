@@ -2,14 +2,14 @@
   <router-view></router-view>
 </template>
 <style>
-@font-face {
-  font-family: 'iconfont';  /* project id 803857 */
-  src: url('//at.alicdn.com/t/font_803857_sfnv60h16nq.eot');
-  src: url('//at.alicdn.com/t/font_803857_sfnv60h16nq.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_803857_sfnv60h16nq.woff') format('woff'),
-  url('//at.alicdn.com/t/font_803857_sfnv60h16nq.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_803857_sfnv60h16nq.svg#iconfont') format('svg');
-}
+  @font-face {
+    font-family: 'iconfont';  /* project id 803857 */
+    src: url('//at.alicdn.com/t/font_803857_3samn2scsot.eot');
+    src: url('//at.alicdn.com/t/font_803857_3samn2scsot.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_803857_3samn2scsot.woff') format('woff'),
+    url('//at.alicdn.com/t/font_803857_3samn2scsot.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_803857_3samn2scsot.svg#iconfont') format('svg');
+  }
   .iconfont {
     font-family:"iconfont" !important;
     font-size:14px;
@@ -23,6 +23,7 @@
   .icon-en:before{ content: "\e712" }
   .icon-zh:before{ content: "\e713" }
   .icon-list:before{ content: "\e618" }
+  .icon-right:before{ content: "\e6bf" }
 
   .margin{margin: 0 auto;width: 1226px}
   .ul-li_a>li{color: #b0b0b0}

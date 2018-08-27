@@ -11,7 +11,10 @@
   .category-list>.category-list-content>ul>li{width: 204px;line-height: 42px;padding-left: 30px;color: #fff}
   .category-list>.category-list-content>div{height: 460px;}
   .category-list>.category-list-content>div>ul{
-    border-right: 1px solid saddlebrown;
+
+    border: 1px solid #e0e0e0;
+    border-left: 0;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.18);
     height: 460px;
     display: flex;
     flex-wrap:wrap;
@@ -33,18 +36,24 @@
 </style>
 <template>
   <div class="category-list margin">
-    <span class="category-list-title iconfont icon-list">全部商品分类</span>
+    <span class="category-list-title">
+      <i class="iconfont icon-list" style="font-size: 18px"></i>
+      全部商品分类
+    </span>
     <div class="category-list-content"
     @mouseleave="closeAllActiveLargeclass">
       <ul class="ul-li_a">
-        <li v-for="(virtualLargeclass,index) of virtualLargeclasses" :key="index"
+        <li
+          v-for="(virtualLargeclass,index) of virtualLargeclasses" :key="index"
           @mousemove="triggerActiveLargeclass(index)"
-          :style="{'background-color': activeLargeColor[index]}">
-          {{virtualLargeclass}}
+          :style="{'background-color': activeLargeColor[index],'display':'flex'}">
+          <span style="display: block;width: 170px">{{virtualLargeclass}}</span>
+          <i class="iconfont icon-right" style="font-size: 18px"></i>
         </li>
       </ul>
       <div>
-        <ul class="ul-li_a"
+        <ul
+          class="ul-li_a"
           :style="{'width':activeLargeclassWidth[index]}"
           v-for="(virtualLargeclass,index) of virtualLargeclasses"
           :key="index"
@@ -74,10 +83,12 @@
       }
     },
     mounted(){
+      console.log("111111")
       let _this = this
       axios.get('http://localhost:3002/test')
       .then(function (response) {
         _this.virtualDatas = response.data
+        console.log(response.data)
       })
       .catch(function (error) {
         console.log(error);

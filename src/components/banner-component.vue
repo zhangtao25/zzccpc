@@ -27,6 +27,9 @@
   .banner-component>.margin .swiper-slide:nth-child(1){background-image: url("./../assets/images/banner/banner0.jpg")}
   .banner-component>.margin .swiper-slide:nth-child(2){background-image: url("./../assets/images/banner/banner1.jpg")}
   .banner-component>.margin .swiper-slide:nth-child(3){background-image: url("./../assets/images/banner/banner2.jpg")}
+  .banner-component>.margin .swiper-pagination{top: 90%;left: 50%}
+  .banner-component>.margin .swiper-pagination span{margin: 10px}
+  .banner-component>.margin .swiper-button-prev{left: 245px}
 </style>
 
 <template>
@@ -40,6 +43,11 @@
           <div class="swiper-slide"></div>
         </div>
       </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
+      <!-- Add Arrows -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
     </div>
   </div>
 </template>
@@ -47,7 +55,27 @@
   import Swiper from 'swiper'
   export default {
     mounted(){
-      var swiper = new Swiper('.swiper-container');
+      var swiper = new Swiper('.swiper-container', {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        speed:600,
+        effect : 'fade',
+        fade: {
+          crossFade: false,
+        }
+      });
     }
   }
 </script>
