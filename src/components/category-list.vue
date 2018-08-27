@@ -1,5 +1,5 @@
 <style>
-  .category-list{height: 60px;position: relative;}
+  .category-list{height: 60px;position: relative;z-index: 100}
   .category-list>.category-list-title{
     width: 234px;height: 60px;
     font-size:16px;
@@ -37,7 +37,7 @@
     <div class="category-list-content"
     @mouseleave="closeAllActiveLargeclass">
       <ul class="ul-li_a">
-        <li v-for="(virtualLargeclass,index) of virtualLargeclasses" :key="index" 
+        <li v-for="(virtualLargeclass,index) of virtualLargeclasses" :key="index"
           @mousemove="triggerActiveLargeclass(index)"
           :style="{'background-color': activeLargeColor[index]}">
           {{virtualLargeclass}}
@@ -45,14 +45,14 @@
       </ul>
       <div>
         <ul class="ul-li_a"
-          :style="{'width':activeLargeclassWidth[index]}" 
-          v-for="(virtualLargeclass,index) of virtualLargeclasses" 
-          :key="index" 
+          :style="{'width':activeLargeclassWidth[index]}"
+          v-for="(virtualLargeclass,index) of virtualLargeclasses"
+          :key="index"
           v-show="activeLargeclass[index]"
           @mouseleave="closeAllActiveLargeclass">
-          <li 
-            v-for="(virtualData,index) of virtualDatas" 
-            :key="index" 
+          <li
+            v-for="(virtualData,index) of virtualDatas"
+            :key="index"
             v-if="virtualLargeclass==virtualData.largeclass">
             <img src="https://i1.mifile.cn/f/i/g/2015/cn-index/m8-80.png?width=80&height=80" alt="">
             <span>{{virtualData.smallclass}}</span>
@@ -75,7 +75,7 @@
     },
     mounted(){
       let _this = this
-      axios.get('http://101.132.46.146:3002/test')
+      axios.get('http://localhost:3002/test')
       .then(function (response) {
         _this.virtualDatas = response.data
       })
