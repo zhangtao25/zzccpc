@@ -6,5 +6,6 @@
   "header.component.order": "我的订单",
   "header.component.help": "帮助中心",
   "header.component.about": "关于枝枝",
-  "header.component.cart": "购物车"
+  "header.component.cart": "购物车",
+  "category.list.all.product.categories": "所有商品分类"
 }

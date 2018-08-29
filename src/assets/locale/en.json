@@ -6,5 +6,6 @@
   "header.component.order": "Order",
   "header.component.help": "Help",
   "header.component.about": "About Zhi",
-  "header.component.cart": "Shopping Cart"
+  "header.component.cart": "Shopping Cart",
+  "category.list.all.product.categories": "All Product Categories"
 }

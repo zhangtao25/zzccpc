@@ -135,6 +135,10 @@
       return {
         msg:Array(8)
       }
+    },
+    props:["teaDetails"],
+    mounted(){
+      console.log(this.teaDetails)
     }
   }
 </script>

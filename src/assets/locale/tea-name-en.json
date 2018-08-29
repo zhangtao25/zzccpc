@@ -1,7 +1,12 @@
 {
-  "white.tea": "white tea",
-  "Guangdong.single.fir": "Guangdong single fir",
-  "Longjing": "Longjing",
-  "Jin.Jun.Mei": "Jin Jun Mei",
-  "puer.tea": "Pu'er Tea"
+  "bohea": "Bohea",
+  "green.tea": "Green Tea",
+  "white.tea": "White Tea",
+  "black.tea": "Black Tea",
+  "oolong": "Oolong",
+  "scented.tea": "Scented Tea",
+  "yellow.tea": "Yellow Tea",
+  "medicinal.tea": "Medicinal Tea",
+  "tea.set": "Tea Set",
+  "other": "Other"
 }

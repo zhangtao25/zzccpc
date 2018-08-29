@@ -35,10 +35,9 @@
         </form>
         <ul class="ul-li_a">
           <li>{{$t("white.tea")}}</li>
-          <li>{{$t("Guangdong.single.fir")}}</li>
-          <li>{{$t("Longjing")}}</li>
-          <li>{{$t("Jin.Jun.Mei")}}</li>
-          <li>{{$t("puer.tea")}}</li>
+          <li>{{$t("black.tea")}}</li>
+          <li>{{$t("yellow.tea")}}</li>
+          <li>{{$t("oolong")}}</li>
         </ul>
       </div>
       <div></div>

@@ -1,7 +1,12 @@
 {
+  "bohea": "红茶",
+  "green.tea": "绿茶",
   "white.tea": "白茶",
-  "Guangdong.single.fir": "广东单枞",
-  "Longjing": "龙井",
-  "Jin.Jun.Mei": "金骏眉",
-  "puer.tea": "普洱"
+  "black.tea": "黑茶",
+  "oolong": "乌龙茶",
+  "scented.tea": "花茶",
+  "yellow.tea": "黄茶",
+  "medicinal.tea": "药茶",
+  "tea.set": "茶具",
+  "other": "其它"
   }

@@ -38,7 +38,7 @@
   <div class="category-list margin">
     <span class="category-list-title">
       <i class="iconfont icon-list" style="font-size: 18px"></i>
-      全部商品分类
+      {{$t("category.list.all.product.categories")}}
     </span>
     <div class="category-list-content"
     @mouseleave="closeAllActiveLargeclass">
@@ -73,22 +73,32 @@
 </template>
 <script>
   import axios from 'axios'
+  import {mapGetters} from 'vuex'
   export default {
     data(){
       return{
-        virtualLargeclasses:['红茶','绿茶','白茶','黑茶','乌龙茶','花茶','黄茶','药茶','茶具','其它'],
+        virtualLargeclasses:[
+          this.$t("bohea"),this.$t("green.tea"),
+          this.$t("white.tea"),this.$t("black.tea"),
+          this.$t("oolong"),this.$t("scented.tea"),
+          this.$t("yellow.tea"),this.$t("medicinal.tea"),
+          this.$t("tea.set"),this.$t("other"),
+        ],
         virtualDatas:[],
         activeLargeclass: Array(10).fill(false),
         activeLargeColor:Array(10).fill('rgba(0, 0, 0, 0)')
       }
     },
     mounted(){
-      console.log("111111")
       let _this = this
-      axios.get('http://localhost:3002/test')
+      axios.get(_this.dataReqUrl+'/allTypesOfTea')
       .then(function (response) {
-        _this.virtualDatas = response.data
-        console.log(response.data)
+        for (let i=0;i<response.data.length;i++){
+          _this.virtualDatas.push({
+            "largeclass":response.data[i][_this.langCode+"_largeclass"],
+            "smallclass":response.data[i][_this.langCode+"_smallclass"]
+          })
+        }
       })
       .catch(function (error) {
         console.log(error);
@@ -110,25 +120,25 @@
       activeLargeclassWidth(){
         let datashuliang = Array(10).fill(0)
         for(let i in this.virtualDatas){
-          if(this.virtualDatas[i]['largeclass'] == "红茶"){
+          if(this.virtualDatas[i]['largeclass'] == this.virtualLargeclasses[0]){
             datashuliang[0]++
-          }else if(this.virtualDatas[i]['largeclass'] == "绿茶"){
+          }else if(this.virtualDatas[i]['largeclass'] == this.virtualLargeclasses[1]){
             datashuliang[1]++
-          }else if(this.virtualDatas[i]['largeclass'] == "白茶"){
+          }else if(this.virtualDatas[i]['largeclass'] == this.virtualLargeclasses[2]){
             datashuliang[2]++
-          }else if(this.virtualDatas[i]['largeclass'] == "黑茶"){
+          }else if(this.virtualDatas[i]['largeclass'] == this.virtualLargeclasses[3]){
             datashuliang[3]++
-          }else if(this.virtualDatas[i]['largeclass'] == "乌龙茶"){
+          }else if(this.virtualDatas[i]['largeclass'] == this.virtualLargeclasses[4]){
             datashuliang[4]++
-          }else if(this.virtualDatas[i]['largeclass'] == "花茶"){
+          }else if(this.virtualDatas[i]['largeclass'] == this.virtualLargeclasses[5]){
             datashuliang[5]++
-          }else if(this.virtualDatas[i]['largeclass'] == "黄茶"){
+          }else if(this.virtualDatas[i]['largeclass'] == this.virtualLargeclasses[6]){
             datashuliang[6]++
-          }else if(this.virtualDatas[i]['largeclass'] == "药茶"){
+          }else if(this.virtualDatas[i]['largeclass'] == this.virtualLargeclasses[7]){
             datashuliang[7]++
-          }else if(this.virtualDatas[i]['largeclass'] == "茶具"){
+          }else if(this.virtualDatas[i]['largeclass'] == this.virtualLargeclasses[8]){
             datashuliang[8]++
-          }else if(this.virtualDatas[i]['largeclass'] == "其它"){
+          }else if(this.virtualDatas[i]['largeclass'] == this.virtualLargeclasses[9]){
             datashuliang[9]++
           }else{}
         }
@@ -137,7 +147,8 @@
           activeLargeclassWidth.push(Math.ceil(datashuliang[i]/6)*245+'px')
         }
         return activeLargeclassWidth
-      }
+      },
+      ...mapGetters(["langCode"])
     }
   }
 </script>
